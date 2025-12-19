@@ -1,0 +1,521 @@
+/* Luxury PG Accommodation Site - Custom Styles */
+
+:root {
+    --matte-black: #0B0B0B;
+    --champagne-gold: #C9A24D;
+    --off-white: #FAFAFA;
+    --dark-gray: #1a1a1a;
+    --light-gray: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--matte-black);
+    background-color: var(--off-white);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--matte-black) !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    color: var(--champagne-gold) !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--off-white) !important;
+    margin: 0 0.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--champagne-gold) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.7)), url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1600&h=900&fit=crop') center/cover;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--off-white);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--light-gray);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--champagne-gold);
+    border: none;
+    color: var(--matte-black);
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #b8943a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 162, 77, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--champagne-gold);
+    color: var(--champagne-gold);
+    background-color: transparent;
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--champagne-gold);
+    color: var(--matte-black);
+}
+
+/* Section Styles */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--matte-black);
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--light-gray);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h4 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Room Cards */
+.room-card {
+    background-color: white;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--light-gray);
+    height: 100%;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.room-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: var(--light-gray);
+}
+
+/* Image fallback for missing images */
+img {
+    background-color: var(--light-gray);
+}
+
+img[src=""],
+img:not([src]) {
+    background: linear-gradient(135deg, var(--matte-black) 0%, var(--dark-gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--champagne-gold);
+    font-size: 0.9rem;
+}
+
+img[src=""]::after,
+img:not([src])::after {
+    content: "Image not found";
+}
+
+/* Image loading error fallback */
+img {
+    background-color: var(--light-gray);
+    min-height: 200px;
+}
+
+img[onerror] {
+    background: linear-gradient(135deg, var(--matte-black) 0%, var(--dark-gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room-card-body {
+    padding: 2rem;
+}
+
+.room-card h5 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.room-price {
+    color: var(--champagne-gold);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Amenities Grid */
+.amenity-item {
+    padding: 1.5rem;
+    background-color: white;
+    border-left: 3px solid var(--champagne-gold);
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.amenity-item:hover {
+    background-color: var(--off-white);
+}
+
+.amenity-item h5 {
+    color: var(--matte-black);
+    margin-bottom: 0.5rem;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 0;
+    border-left: 4px solid var(--champagne-gold);
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-rating {
+    color: var(--champagne-gold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--matte-black);
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--matte-black);
+    color: var(--off-white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--matte-black);
+    color: var(--off-white);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer h5 {
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.footer a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--champagne-gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #999;
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 0;
+    border: 1px solid var(--light-gray);
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--champagne-gold);
+    box-shadow: 0 0 0 0.2rem rgba(201, 162, 77, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--matte-black);
+    margin-bottom: 0.5rem;
+}
+
+/* Pricing Table */
+.pricing-table {
+    background-color: white;
+    padding: 2.5rem;
+    border: 2px solid var(--light-gray);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    height: 100%;
+}
+
+.pricing-table:hover {
+    border-color: var(--champagne-gold);
+    transform: translateY(-5px);
+}
+
+.pricing-table h3 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.pricing-amount {
+    font-size: 2.5rem;
+    color: var(--champagne-gold);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+/* Location Map */
+.location-map {
+    width: 100%;
+    height: 400px;
+    border: 2px solid var(--light-gray);
+}
+
+/* Contact Info Cards */
+.contact-card {
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--light-gray);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--champagne-gold);
+    margin-bottom: 1rem;
+}
+
+/* Rules & Policies */
+.policy-section {
+    background-color: white;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--champagne-gold);
+}
+
+.policy-section h4 {
+    color: var(--matte-black);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.policy-section ul li {
+    padding: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.policy-section ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--champagne-gold);
+    font-weight: bold;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20BA5A;
+    color: white;
+}
+
+/* Utility Classes */
+.bg-dark-custom {
+    background-color: var(--matte-black) !important;
+}
+
+.text-gold {
+    color: var(--champagne-gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--champagne-gold) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+/* Loading Spinner */
+.spinner-border {
+    color: var(--champagne-gold);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 0;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
